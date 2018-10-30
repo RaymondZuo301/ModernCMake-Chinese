@@ -8,7 +8,7 @@ Modern CMake 最早由 [Henry Schreiner](https://iscinumpy.gitlab.io)撰写。�
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-# 翻译粗糙，欢迎Issue，PR
+# 进度3%，翻译粗糙，欢迎Issue，PR
 
 # 目录
 
