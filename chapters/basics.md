@@ -1,7 +1,8 @@
-# Introduction to the basics
+# 基础知识简介
 
+## 最低版本要求
 
-## Minimum Version
+以下是每个CMakeLists.txt（CMake会专门寻找这个文件名）的第一行代码：
 
 Here's the first line of every CMakeLists.txt, which is the required name of the file CMake looks for:
 
@@ -9,9 +10,13 @@ Here's the first line of every CMakeLists.txt, which is the required name of the
 cmake_minimum_required(VERSION 3.1)
 ```
 
+让我们来提一下CMake的语法。这行命令«command:`cmake_minimum_required`»不区分大小写，所以通常的做法是用小写[^1] 。`VERSION`是这个函数的特殊关键词，版本号的数值位于其后。可以单击本书各处的命令名称超链接以阅读官方文档，并可以在官方页面的下拉菜单中切换CMake版本。
+
 Let's mention a bit of CMake syntax. The command name «command:`cmake_minimum_required`» is case insensitive, so the common practice is to use lower case. [^1] The `VERSION` is a special keyword for this function. And the value of the version follows the keyword. Like everywhere in this book, just click on the command name to see the official documentation, and use the dropdown to switch documentation between CMake versions.
 
-This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. If you set it to 3.3 or less, you'll get the wrong hidden symbols behaviour, etc. A list of policies and versions is available at «cmake:policies».
+这一行很特殊[^2]！`VERSION`还将用来规定CMake遵循的行为策略（policies)。所以如果你将«command:`cmake_minimum_required`»设定为`VERSION 2.8`，你将在macOS上遇到错误的链接行为，即使使用了最新的CMake版本。如果将其设定为3.3或更低，你将会遇到错误的隐藏符号表（hidden symbols）行为，等等。可以在«cmake:policies»查找策略和版本的列表
+
+This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required`to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. If you set it to 3.3 or less, you'll get the wrong hidden symbols behaviour, etc. A list of policies and versions is available at «cmake:policies».
 
 In CMake 3.12, this will support a range, such as `VERSION 3.1...3.12`; this means you support as low as 3.1 but have also tested it with the new policy settings up to 3.12. This is much nicer on users that need the better settings, and due to a trick in the syntax, it's backward compatible with older versions of CMake (though actually running CMake 3.2-3.11 will only set the 3.1 version of the policies in this example). New versions of policies tend to be most important for macOS and Windows users, who also
 usually have a very recent version of CMake.
