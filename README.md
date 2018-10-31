@@ -1,4 +1,6 @@
-# [点击阅读](https://xiazuomo.gitbook.io/modern-cmake-chinese/)
+# [Gitbook点击阅读](https://xiazuomo.gitbook.io/modern-cmake-chinese/)
+
+注：由于新版Gitbook的很多反人类规定（无法导出PDF等），翻译版本使用标准Markdown而非Gitbook风格格式，后续将增加PDF下载
 
 # 翻译粗糙，欢迎Issue，PR
 
@@ -17,10 +19,46 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-Share
 
 0% [:white_check_mark::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square::white_large_square:] 100%
 
-# To-Do List
+# 目录
 
-- [ ] 完成翻译
-
-- [ ] 添加超链
-
+* :white_check_mark:[Modern CMake 简介](chapters/introduction.md)
+    * [Installing CMake](chapters/intro/installing.md)
+    * [Running CMake](chapters/intro/running.md)
+    * [Dos and Don'ts](chapters/intro/dodonot.md)
+    * [What's new in CMake](chapters/intro/newcmake.md)
+* :white_check_mark:[基础知识简介](chapters/basics.md)
+    * [Variables and the Cache](chapters/basics/variables.md)
+    * [Programming in CMake](chapters/basics/functions.md)
+    * [Communicating with your code](chapters/basics/comms.md)
+    * [How to Structure Your Project](chapters/basics/structure.md)
+    * [Running Other Programs](chapters/basics/programs.md)
+* [Adding Features](chapters/features.md)
+    * [C++11 and Beyond](chapters/features/cpp11.md)
+    * [Small but common needs](chapters/features/small.md)
+    * [Utilities](chapters/features/utilities.md)
+    * [Useful modules](chapters/features/modules.md)
+    * [IDEs](chapters/features/ides.md)
+    * [Debugging](chapters/features/debug.md)
+* [Including Projects](chapters/projects.md)
+    * [Submodule](chapters/projects/submodule.md) 
+    * [DownloadProject](chapters/projects/download.md) 
+    * [Fetch (CMake 3.11)](chapters/projects/fetch.md) 
+* [Testing](chapters/testing.md)
+    * [GoogleTest](chapters/testing/googletest.md)
+    * [Catch](chapters/testing/catch.md)
+* [Exporting and Installing](chapters/install.md)
+    * [Installing](chapters/install/installing.md)
+    * [Exporting](chapters/install/exporting.md)
+    * [Packaging](chapters/install/packaging.md)
+* [Looking for libraries](chapters/packages.md)
+    * [CUDA](chapters/packages/CUDA.md)
+    * [OpenMP](chapters/packages/OpenMP.md)
+    * [Boost](chapters/packages/Boost.md)
+    * [MPI](chapters/packages/MPI.md)
+    * [ROOT](chapters/packages/ROOT.md)
+        * [UseFile Example](examples/root-usefile/README.md)
+        * [Simple Example](examples/root-simple/README.md)
+        * [Simple Example CMake 3.11+](examples/root-simple-3.11/README.md)
+        * [Dictionary Example](examples/root-dict/README.md)
+    * [Minuit2](chapters/packages/Minuit2.md)
 
