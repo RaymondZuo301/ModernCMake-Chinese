@@ -5,7 +5,7 @@ root: ./
 # Files to use as SUMMARY/README.
 # (Relative to <root> directory)
 structure:
-  readme: README-GITBOOK.md
+  readme: GITBOOKREADME.md
   summary: SUMMARY.md
 
 # Redirect urls to specific files (relative to the <root> directory)
