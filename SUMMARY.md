@@ -1,11 +1,11 @@
 # 目录
 
-* :white_check_mark:[Modern CMake 简介](chapters/introduction.md)
+* [Modern CMake 简介](chapters/introduction.md)
     * [Installing CMake](chapters/intro/installing.md)
     * [Running CMake](chapters/intro/running.md)
     * [Dos and Don'ts](chapters/intro/dodonot.md)
     * [What's new in CMake](chapters/intro/newcmake.md)
-* :white_check_mark:[基础知识简介](chapters/basics.md)
+* [基础知识简介](chapters/basics.md)
     * [Variables and the Cache](chapters/basics/variables.md)
     * [Programming in CMake](chapters/basics/functions.md)
     * [Communicating with your code](chapters/basics/comms.md)

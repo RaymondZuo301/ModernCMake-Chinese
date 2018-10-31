@@ -51,8 +51,8 @@ Since `BOOL` is such a common variable type, you can set it more succinctly with
 
  ```cmake
  option(MY_OPTION "This is settable from the command line" OFF)
- ``` 
- 
+ ```
+
 For the `BOOL` datatype, there are several different wordings for `ON` and `OFF`.
 
 See [cmake-variables] for a listing of known variables in CMake.
@@ -62,7 +62,7 @@ See [cmake-variables] for a listing of known variables in CMake.
 You can also `set(ENV{variable_name} value)` and get `$ENV{variable_name}` environment variables, though it is generally a very good idea to avoid them.
 
 ## The Cache
- 
+
 The cache is actually just a text file, `CMakeCache.txt`, that gets created in the build directory when you run CMake. This is how CMake remembers anything you set, so you don't have to re-list your options every time you rerun CMake. 
 
 ## Properties
