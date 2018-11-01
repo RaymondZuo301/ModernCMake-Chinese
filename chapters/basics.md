@@ -128,7 +128,7 @@ As you'll see in the following sections, often you'll need to make a fictional t
 
 You can also make an `ALIAS` library with an existing library, which simply gives you a new name for a target. The one benefit to this is that you can make libraries with `::` in the name (which you'll see later). [^3]
 
-## “Target”是你的好朋友
+## Target是你的“好朋友”
 
 ## Targets are your friend
 
@@ -153,11 +153,11 @@ add_library(another STATIC another.cpp another.h)
 target_link_libraries(another PUBLIC one)
 ```
 
-«command:`target_link_libraries`» 可能是CMake中最有用和最令人困惑的命令。它需要一个target（`another`）并添加依赖项。如果不存在该名称（`one`）的target，则它会添加指向one路径上调用的库的链接（因此命令的名称）。或者你可以给它一个完整的图书馆路径。或链接器标志。只是为了增加最后的混淆，经典的CMake允许你跳过关键字选择PUBLIC，等等。如果这是在目标上完成的，如果你试图在链中进一步混合样式，你会收到错误。
+«command:`target_link_libraries`» 可能是CMake中最有用和最令人困惑的命令。它需要一个target（`another`）并添加依赖项。如果不存在名为`one`的target，则它会在路径上添加一个指向`one`的链接（根据这行命令定义的名称）。或者你可以给它一个完整的lib路径或链接器标志（linker flag）。最后一点令人混淆的是，经典的CMake允许你跳过`PUBLIC`等关键字选项。如果在target上这么干了，你将在试图混合使用类型时（在后续引用关系中）发生错误。
 
-专注于在任何地方使用目标，以及随处可见的关键字，你会没事的。
+专注于在任何地方使用target及关键字，对你有好处。
 
-目标可以包含目录，链接库（或链接目标），编译选项，编译定义，编译功能（参见C ++ 11章节）等。正如您将在两个项目章节中看到的那样，您通常可以获得目标（并始终制作目标）来表示您使用的所有库。即使是不是真正的库的东西，比如OpenMP，也可以用目标来表示。这就是Modern CMake很棒的原因！
+target可以包含include directories、链接库（linked libraries）或链接目标（linked targets）、编译选项、编译定义、编译特性（参见C ++ 11章节）等。正如您将在两个including projects有关章节中看到的那样，您通常可以获得targets（并始终创建targets）来表示您使用的所有库。即使是不是真正的库的东西，比如OpenMP，也可以用target来表示。这就是Modern CMake很棒的原因！
 
 «command:`target_link_libraries`» is probably the most useful and confusing command in CMake. It takes a target (`another`) and adds a dependency if a target is given. If no target of that name (`one`) exists, then it adds a link to a library called `one` on your path (hence the name of the command). Or you can give it a full path to a library. Or a linker flag. Just to add a final bit of confusion, classic CMake allowed you to skip the keyword selection of `PUBLIC`, etc. If this was done on a target, you'll get an error if you try to mix styles further down the chain.
 
@@ -166,7 +166,11 @@ Focus on using targets everywhere, and keywords everywhere, and you'll be fine.
 Targets can have include directories, linked libraries (or linked targets), compile options, compile definitions, compile features (see the C++11 chapter), and more. As you'll see in the two including projects chapters, you can often get targets (and always make targets) to represent all the libraries you use. Even things that are not true libraries, like OpenMP, can be represented with targets. This is why Modern CMake is great!
 
 
+## 深入
+
 ## Dive in
+
+看看您是否可以按照以下CMakeLists.txt操作。它创建了一个简单的C ++ 11库和一个使用它的程序。没有依赖。稍后我将讨论更多C ++标准选项，暂时使用CMake 3.8系统。
 
 See if you can follow the following file. It makes a simple C++11 library and a program using it. No dependencies. I'll discuss more C++ standard options later, using the CMake 3.8 system for now.
 
@@ -184,6 +188,11 @@ target_link_libraries(calc PUBLIC calclib)
 
 ```
 
+[^1]: 在这本书中，我将主要避免向你展示错误的做事方式；你可以在网上找到很多这样的错误例子。我偶尔会提到替代方法，但除非绝对必要，否则不推荐这些。通常它们只是帮助您阅读较旧的CMake代码。
+
+[^2]: 你有时会在这里看到`FATAL_ERROR`，在CMake < 2.6中运行它时需要支持很好的失败处理机制，但这应该不再是问题了。
+
+[^3]: 该`::`语法最初用于`INTERFACE IMPORTED`库，它们明确地被认为是在当前项目之外定义的库。但是，正因如此，大多数`target_*`命令都不适用于`IMPORTED`库，这使得它们很难自行设置。所以现在不要使用`IMPORTED`关键字，而是应该使用`ALIAS` target；在您开始导出目标之前一切正常。这个限制在CMake 3.11中得到了修复。
 
 [^1]: In this book, I'll mostly avoid showing you the wrong way to do things; you can find plenty of examples of that online. I'll mention alternatives occasionally, but these are not recommended unless they are absolutely necessary; often they are just there to help you read older CMake code.
 
