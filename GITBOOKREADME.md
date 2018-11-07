@@ -1,5 +1,3 @@
-# 翻译粗糙，欢迎Issue，PR
-
 # 译者按
 
 Modern CMake 最早由 [Henry Schreiner](https://iscinumpy.gitlab.io)撰写。其他贡献者可以在这里找到 [listed on GitLab](https://gitlab.com/CLIUtils/modern-cmake/graphs/master).
